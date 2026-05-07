@@ -1,10 +1,20 @@
 import { defineConfig } from 'astro/config';
 
-// TODO: Replace with the production canonical URL before deployment.
-const SITE_URL = 'https://monikalewicka.pl';
+// GitHub Pages bez własnej domeny:
+//   site → https://<twój-login>.github.io
+//   base → '/monika-lewicka-webpage'
+//
+// Po przejściu na własną domenę (monikalewicka.pl):
+//   site → 'https://monikalewicka.pl'
+//   base → '/'           (lub usuń to pole)
+//   + dodaj public/CNAME z zawartością: monikalewicka.pl
+
+// TODO: Gdy URL będzie znany, dodaj do defineConfig:
+//   site: 'https://<login>.github.io',
+const BASE_PATH = '/';
 
 export default defineConfig({
-  site: SITE_URL,
+  base: BASE_PATH,
   compressHTML: true,
   build: {
     inlineStylesheets: 'auto',
