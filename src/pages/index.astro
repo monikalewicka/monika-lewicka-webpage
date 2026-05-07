@@ -1,0 +1,1072 @@
+---
+// =============================================================================
+// Monika Lewicka — Psycholog · onepager
+// -----------------------------------------------------------------------------
+// Edit data below in one place — copy is rendered from these constants.
+// Search for "TODO:" to find every placeholder that needs to be replaced
+// before deployment (email, phone, canonical URL, OG image, privacy policy).
+// =============================================================================
+
+// TODO: Replace contact placeholders with real data when the client provides it.
+const CONTACT = {
+  email: 'kontakt@monikalewicka.pl',
+  phoneDisplay: '+48 000 000 000',
+  phoneHref: '+48000000000',
+  location: 'Warszawa / konsultacje online',
+};
+
+// TODO: Replace canonical URL & OG image once the domain & assets are ready.
+const SITE_URL = 'https://monikalewicka.pl';
+const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+
+const SEO = {
+  title: 'Monika Lewicka — Psycholog · konsultacje psychologiczne · Warszawa / online',
+  description:
+    'Konsultacje i wsparcie psychologiczne dla osób dorosłych w Warszawie i online. Pomoc w stresie, przeciążeniu, wypaleniu zawodowym oraz zmianach życiowych i zawodowych.',
+};
+
+const NAV = [
+  { href: '#o-mnie', label: 'O mnie' },
+  { href: '#dla-kogo', label: 'W czym pomagam' },
+  { href: '#jak-pracuje', label: 'Jak pracuję' },
+  { href: '#cennik', label: 'Cennik' },
+  { href: '#kontakt', label: 'Kontakt' },
+];
+
+const FOR_WHOM = [
+  'Dla osób, które czują przeciążenie i napięcie.',
+  'Dla osób doświadczających stresu zawodowego.',
+  'Dla osób w zmianie życiowej lub zawodowej.',
+  'Dla osób, które chcą lepiej rozumieć swoje emocje i potrzeby.',
+  'Dla osób szukających większej równowagi między pracą a życiem prywatnym.',
+];
+
+const SCOPE = [
+  'Konsultacje psychologiczne dla osób dorosłych',
+  'Wsparcie psychologiczne w sytuacjach kryzysowych',
+  'Pomoc w radzeniu sobie ze stresem i przeciążeniem',
+  'Wsparcie w zmianach życiowych i zawodowych',
+  'Psychoedukacja',
+  'Rozwój kompetencji emocjonalnych',
+  'Wsparcie osób doświadczających wypalenia zawodowego',
+  'Konsultacje dotyczące relacji interpersonalnych',
+  'Wsparcie w budowaniu równowagi między życiem zawodowym a prywatnym',
+  'Pomoc w obniżonym samopoczuciu i trudnościach emocjonalnych',
+];
+
+const HOW_I_WORK = [
+  {
+    title: 'Uważność',
+    body: 'Słucham uważnie, bez pośpiechu i bez ocen. Tworzymy przestrzeń, w której to, co istotne, ma czas się pojawić.',
+  },
+  {
+    title: 'Autentyczna relacja',
+    body: 'Spotkanie jest rozmową dwóch osób, w pełnym szacunku. Bez maski, bez wykładu, bez pouczania.',
+  },
+  {
+    title: 'Bezpieczna przestrzeń',
+    body: 'Konsultacje są poufne. Mówisz tyle, ile sam chcesz powiedzieć — w swoim tempie i na swoich warunkach.',
+  },
+  {
+    title: 'Spokojna rozmowa',
+    body: 'Bez gotowych recept. Wspólnie zatrzymujemy się przy tym, co dzieje się w Twoim życiu i co potrzebuje uwagi.',
+  },
+  {
+    title: 'Twoje tempo',
+    body: 'Szanuję rytm, w jakim chcesz pracować. Każde spotkanie to osobna rozmowa — nie ma sztywnego programu.',
+  },
+  {
+    title: 'Doświadczenie biznesowe',
+    body: 'Wieloletnia praca w marketingu, PR i komunikacji pomaga mi rozumieć presję, tempo i wyzwania życia zawodowego.',
+  },
+];
+
+// TODO: Adjust pricing here. Copy in the section description is intentionally
+// soft so prices can be edited without rewriting the surrounding text.
+const PRICING = [
+  { title: 'Konsultacja psychologiczna', duration: '50 min', price: '250 zł' },
+  { title: 'Konsultacja psychologiczna online', duration: '50 min', price: '230 zł' },
+  { title: 'Pierwsza konsultacja / rozmowa wstępna', duration: '50 min', price: '250 zł' },
+  { title: 'Konsultacja wsparciowa w sytuacji przeciążenia lub kryzysu', duration: '50 min', price: '250 zł' },
+  { title: 'Psychoedukacja / rozwój kompetencji emocjonalnych', duration: '50 min', price: '250 zł' },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': `${SITE_URL}/#service`,
+  name: 'Monika Lewicka — Psycholog',
+  description: SEO.description,
+  url: SITE_URL,
+  image: OG_IMAGE,
+  areaServed: [
+    { '@type': 'City', name: 'Warszawa' },
+    { '@type': 'Country', name: 'Polska' },
+  ],
+  provider: {
+    '@type': 'Person',
+    name: 'Monika Lewicka',
+    jobTitle: 'Psycholog',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Warszawa',
+    addressCountry: 'PL',
+  },
+  availableLanguage: 'pl',
+  email: `mailto:${CONTACT.email}`,
+  telephone: CONTACT.phoneHref,
+};
+---
+
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#FAF7F1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{SEO.title}</title>
+    <meta name="description" content={SEO.description} />
+
+    <link rel="canonical" href={SITE_URL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    {/* Open Graph */}
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:site_name" content="Monika Lewicka — Psycholog" />
+    <meta property="og:title" content={SEO.title} />
+    <meta property="og:description" content={SEO.description} />
+    <meta property="og:url" content={SITE_URL} />
+    <meta property="og:image" content={OG_IMAGE} />
+
+    {/* Twitter */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={SEO.title} />
+    <meta name="twitter:description" content={SEO.description} />
+    <meta name="twitter:image" content={OG_IMAGE} />
+
+    {/* JSON-LD structured data */}
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="Monika Lewicka — psycholog, strona główna">
+          <span class="brand-name">Monika Lewicka</span>
+          <span class="brand-role">psycholog</span>
+        </a>
+
+        <nav class="primary-nav" aria-label="Menu główne">
+          <ul class="nav-list">
+            {NAV.map((item) => (
+              <li><a href={item.href}>{item.label}</a></li>
+            ))}
+          </ul>
+        </nav>
+
+        <a href="#kontakt" class="btn btn-primary nav-cta">Umów konsultację</a>
+      </div>
+    </header>
+
+    <main id="main">
+      {/* ─── HERO ─────────────────────────────────────────────────────── */}
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="container hero-inner">
+          <p class="eyebrow">Konsultacje psychologiczne · {CONTACT.location}</p>
+          <h1 id="hero-heading" class="hero-title">
+            Wsparcie psychologiczne w&nbsp;stresie, przeciążeniu i&nbsp;zmianie.
+          </h1>
+          <p class="hero-lead">
+            Konsultacje psychologiczne dla osób dorosłych, które potrzebują
+            zatrzymania, rozmowy i&nbsp;lepszego zrozumienia swoich potrzeb.
+          </p>
+          <div class="hero-actions">
+            <a href="#kontakt" class="btn btn-primary">Umów konsultację</a>
+            <a href="#zakres" class="btn btn-ghost">Poznaj zakres wsparcia</a>
+          </div>
+          <p class="hero-trust">
+            Dla osób dorosłych <span class="dot" aria-hidden="true">·</span>
+            Warszawa / online <span class="dot" aria-hidden="true">·</span>
+            spokojna przestrzeń do rozmowy
+          </p>
+        </div>
+      </section>
+
+      {/* ─── O MNIE ──────────────────────────────────────────────────── */}
+      <section id="o-mnie" class="section section-light" aria-labelledby="about-heading">
+        <div class="container two-col">
+          <div class="col-text">
+            <p class="section-eyebrow">O mnie</p>
+            <h2 id="about-heading" class="section-title">
+              Spotkanie, które daje czas na&nbsp;oddech
+            </h2>
+            <div class="prose">
+              <p>
+                Jestem psychologiem wspierającym osoby dorosłe w&nbsp;radzeniu
+                sobie z&nbsp;przeciążeniem, stresem oraz zmianami życiowymi
+                i&nbsp;zawodowymi.
+              </p>
+              <p>
+                Przez wiele lat pracowałam w&nbsp;środowisku biznesowym,
+                realizując projekty z&nbsp;zakresu komunikacji, reklamy, PR
+                i&nbsp;marketingu dla agencji reklamowych oraz instytucji
+                finansowych. Doświadczenie pracy w&nbsp;wymagającym
+                i&nbsp;dynamicznym świecie biznesu pozwala mi lepiej rozumieć
+                wyzwania współczesnego życia — presję, tempo, odpowiedzialność
+                i&nbsp;wypalenie.
+              </p>
+              <p>
+                W&nbsp;pracy psychologicznej ważne są dla mnie uważność,
+                autentyczna relacja oraz stworzenie bezpiecznej przestrzeni do
+                rozmowy. Wierzę, że czasem największą zmianę przynosi nie
+                pośpiech i&nbsp;ciągłe wymagania wobec siebie, ale zatrzymanie
+                się i&nbsp;lepsze zrozumienie własnych potrzeb.
+              </p>
+            </div>
+          </div>
+
+          <aside class="col-aside">
+            <figure class="callout">
+              <blockquote>
+                <p>
+                  „Czasem największą zmianę przynosi nie pośpiech, ale
+                  zatrzymanie się i&nbsp;lepsze zrozumienie własnych potrzeb.”
+                </p>
+              </blockquote>
+              <figcaption>Monika Lewicka</figcaption>
+            </figure>
+          </aside>
+        </div>
+      </section>
+
+      {/* ─── DLA KOGO ────────────────────────────────────────────────── */}
+      <section id="dla-kogo" class="section" aria-labelledby="forwhom-heading">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-eyebrow">Dla kogo</p>
+            <h2 id="forwhom-heading" class="section-title">Komu może pomóc rozmowa</h2>
+            <p class="section-lead">
+              Konsultacje są skierowane do osób dorosłych, które chcą zatrzymać
+              się przy tym, co dzieje się w&nbsp;ich życiu, i&nbsp;w&nbsp;spokojnej
+              rozmowie poszukać własnych odpowiedzi.
+            </p>
+          </header>
+
+          <ul class="cards cards-3" role="list">
+            {FOR_WHOM.map((line) => (
+              <li class="card card-soft">
+                <span class="card-mark" aria-hidden="true"></span>
+                <p>{line}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ─── ZAKRES WSPARCIA ─────────────────────────────────────────── */}
+      <section id="zakres" class="section section-light" aria-labelledby="scope-heading">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-eyebrow">Zakres wsparcia</p>
+            <h2 id="scope-heading" class="section-title">W czym pomagam</h2>
+            <p class="section-lead">
+              Pracuję z&nbsp;osobami dorosłymi w&nbsp;obszarach, które wymagają
+              spokojnej rozmowy i&nbsp;lepszego rozumienia siebie. Poniżej
+              najczęstsze tematy konsultacji.
+            </p>
+          </header>
+
+          <ul class="scope-grid" role="list">
+            {SCOPE.map((item) => (
+              <li class="scope-item">
+                <span class="bullet" aria-hidden="true">—</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <p class="note">
+            Zakres udzielanego wsparcia jest zgodny z&nbsp;moimi kompetencjami
+            i&nbsp;przygotowaniem zawodowym. W&nbsp;razie potrzeby rekomenduję
+            kontakt z&nbsp;odpowiednimi specjalistami lub ośrodkami wsparcia.
+          </p>
+        </div>
+      </section>
+
+      {/* ─── JAK PRACUJĘ ─────────────────────────────────────────────── */}
+      <section id="jak-pracuje" class="section" aria-labelledby="how-heading">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-eyebrow">Jak pracuję</p>
+            <h2 id="how-heading" class="section-title">Spokojnie, z uważnością, w Twoim tempie</h2>
+            <p class="section-lead">
+              Konsultacje to przestrzeń na&nbsp;rozmowę i&nbsp;refleksję — nie
+              na&nbsp;szybkie diagnozy ani gotowe odpowiedzi.
+            </p>
+          </header>
+
+          <ul class="cards cards-3" role="list">
+            {HOW_I_WORK.map((item) => (
+              <li class="card">
+                <h3 class="card-title">{item.title}</h3>
+                <p class="card-body">{item.body}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ─── CENNIK ──────────────────────────────────────────────────── */}
+      <section id="cennik" class="section section-light" aria-labelledby="pricing-heading">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-eyebrow">Cennik</p>
+            <h2 id="pricing-heading" class="section-title">Proponowany cennik konsultacji</h2>
+            <p class="section-lead">
+              Każde spotkanie trwa 50&nbsp;minut. Forma i&nbsp;zakres wsparcia
+              są ustalane indywidualnie podczas rozmowy.
+            </p>
+          </header>
+
+          <ul class="pricing-list" role="list">
+            {PRICING.map((p) => (
+              <li class="price-row">
+                <div class="price-info">
+                  <h3 class="price-title">{p.title}</h3>
+                  <p class="price-meta">{p.duration}</p>
+                </div>
+                <div class="price-amount" aria-label={`Cena: ${p.price}`}>{p.price}</div>
+              </li>
+            ))}
+          </ul>
+
+          <p class="note">
+            Cennik ma charakter informacyjny. Ostateczny zakres i&nbsp;forma
+            wsparcia ustalane są indywidualnie.
+          </p>
+        </div>
+      </section>
+
+      {/* ─── KONTAKT ─────────────────────────────────────────────────── */}
+      <section id="kontakt" class="section" aria-labelledby="contact-heading">
+        <div class="container two-col two-col-contact">
+          <div class="col-text">
+            <p class="section-eyebrow">Kontakt</p>
+            <h2 id="contact-heading" class="section-title">Napisz kilka słów</h2>
+            <p class="prose">
+              Jeśli chcesz umówić konsultację lub zapytać o&nbsp;możliwość
+              spotkania, napisz kilka słów o&nbsp;tym, czego potrzebujesz.
+              Odpowiem z&nbsp;informacją o&nbsp;dostępnych terminach.
+            </p>
+            <a
+              href={`mailto:${CONTACT.email}?subject=${encodeURIComponent('Zapytanie o konsultację')}`}
+              class="btn btn-primary"
+            >
+              Wyślij wiadomość
+            </a>
+          </div>
+
+          <aside class="contact-card">
+            <dl class="contact-list">
+              <div class="contact-item">
+                <dt>E-mail</dt>
+                {/* TODO: Replace email when client provides the real address. */}
+                <dd>
+                  <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+                </dd>
+              </div>
+              <div class="contact-item">
+                <dt>Telefon</dt>
+                {/* TODO: Replace phone number when client provides it. */}
+                <dd>
+                  <a href={`tel:${CONTACT.phoneHref}`}>{CONTACT.phoneDisplay}</a>
+                </dd>
+              </div>
+              <div class="contact-item">
+                <dt>Lokalizacja</dt>
+                <dd>{CONTACT.location}</dd>
+              </div>
+              <div class="contact-item">
+                <dt>Język</dt>
+                <dd>polski</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    {/* ─── FOOTER ────────────────────────────────────────────────────── */}
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <p class="footer-name">Monika Lewicka</p>
+          <p class="footer-role">Psycholog · konsultacje psychologiczne</p>
+        </div>
+
+        <p class="footer-disclaimer">
+          Strona nie służy do udzielania pomocy w&nbsp;stanach bezpośredniego
+          zagrożenia życia lub zdrowia. W&nbsp;sytuacji nagłej skontaktuj się
+          z&nbsp;numerem alarmowym <strong>112</strong> lub najbliższym
+          ośrodkiem pomocy kryzysowej.
+        </p>
+
+        <ul class="footer-links" role="list">
+          {/* TODO: Replace # with the real URL of the privacy policy when available. */}
+          <li><a href="#">Polityka prywatności</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+
+        <p class="footer-copy">
+          © {new Date().getFullYear()} Monika Lewicka. Wszelkie prawa zastrzeżone.
+        </p>
+      </div>
+    </footer>
+
+    <style is:global>
+      /* ───────────────────────── DESIGN TOKENS ─────────────────────── */
+      :root {
+        --color-bg: #FAF7F1;
+        --color-surface: #FFFFFF;
+        --color-sand: #E8DDCD;
+        --color-sand-soft: #F1E9DC;
+        --color-sage: #A9B8A3;
+        --color-sage-dark: #6F7F68;
+        --color-graphite: #263238;
+        --color-navy-muted: #2F3A46;
+        --color-taupe: #B8A89A;
+        --color-text: #2A2A2A;
+        --color-muted: #6D6A66;
+        --color-line: rgba(38, 50, 56, 0.08);
+
+        --radius-sm: 6px;
+        --radius-md: 12px;
+        --radius-lg: 20px;
+        --radius-xl: 28px;
+
+        --shadow-soft: 0 1px 2px rgba(38, 50, 56, 0.04),
+                       0 8px 24px rgba(38, 50, 56, 0.05);
+        --shadow-card: 0 1px 2px rgba(38, 50, 56, 0.04),
+                       0 12px 32px rgba(38, 50, 56, 0.06);
+
+        --container: 1120px;
+        --gutter: clamp(1.25rem, 4vw, 2rem);
+
+        --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                     "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+                     "Apple Color Emoji", "Segoe UI Emoji";
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+
+      html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        background: var(--color-bg);
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        html { scroll-behavior: smooth; }
+      }
+
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        font-size: 17px;
+        line-height: 1.65;
+        color: var(--color-text);
+        background: var(--color-bg);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+      }
+
+      img { max-width: 100%; height: auto; display: block; }
+
+      a { color: var(--color-navy-muted); text-decoration-color: var(--color-sage); text-underline-offset: 3px; }
+      a:hover { color: var(--color-sage-dark); }
+      a:focus-visible,
+      button:focus-visible,
+      summary:focus-visible {
+        outline: 2px solid var(--color-sage-dark);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+
+      ::selection { background: var(--color-sage); color: #fff; }
+
+      /* Anchor jump offset for sticky header */
+      [id] { scroll-margin-top: 96px; }
+
+      /* Skip link */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 1rem;
+        background: var(--color-graphite);
+        color: #fff;
+        padding: 0.5rem 0.875rem;
+        border-radius: var(--radius-sm);
+        z-index: 100;
+        text-decoration: none;
+      }
+      .skip-link:focus { top: 0.75rem; }
+
+      /* ───────────────────────── LAYOUT ────────────────────────────── */
+      .container {
+        width: 100%;
+        max-width: var(--container);
+        margin-inline: auto;
+        padding-inline: var(--gutter);
+      }
+
+      .section {
+        padding-block: clamp(3.5rem, 7vw, 6rem);
+        position: relative;
+      }
+      .section-light {
+        background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-sand-soft) 50%, var(--color-bg) 100%);
+      }
+      .section + .section { border-top: 1px solid var(--color-line); }
+
+      .section-header {
+        max-width: 38rem;
+        margin: 0 auto 3rem;
+        text-align: center;
+      }
+
+      .section-eyebrow,
+      .eyebrow {
+        font-size: 0.78rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--color-sage-dark);
+        margin: 0 0 1rem;
+        font-weight: 500;
+      }
+
+      .section-title {
+        font-family: var(--font-serif);
+        font-weight: 500;
+        font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        color: var(--color-graphite);
+        margin: 0 0 1rem;
+      }
+
+      .section-lead {
+        font-size: 1.05rem;
+        color: var(--color-muted);
+        margin: 0;
+      }
+
+      .prose p { margin: 0 0 1rem; }
+      .prose p:last-child { margin-bottom: 0; }
+
+      .note {
+        margin-top: 2.25rem;
+        font-size: 0.92rem;
+        color: var(--color-muted);
+        max-width: 44rem;
+        text-align: center;
+        margin-inline: auto;
+        line-height: 1.6;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      @media (min-width: 880px) {
+        .two-col { grid-template-columns: 1.3fr 1fr; gap: 4rem; align-items: start; }
+      }
+
+      /* ───────────────────────── BUTTONS ───────────────────────────── */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.85rem 1.4rem;
+        border-radius: 999px;
+        font-weight: 500;
+        font-size: 0.97rem;
+        line-height: 1;
+        text-decoration: none;
+        border: 1px solid transparent;
+        transition: background-color 0.2s ease, color 0.2s ease,
+                    border-color 0.2s ease, transform 0.15s ease;
+        white-space: nowrap;
+      }
+      .btn:focus-visible { outline-offset: 4px; }
+      .btn:active { transform: translateY(1px); }
+
+      .btn-primary {
+        background: var(--color-sage-dark);
+        color: #fff;
+      }
+      .btn-primary:hover {
+        background: var(--color-graphite);
+        color: #fff;
+      }
+
+      .btn-ghost {
+        background: transparent;
+        color: var(--color-graphite);
+        border-color: var(--color-line);
+      }
+      .btn-ghost:hover {
+        background: var(--color-surface);
+        border-color: var(--color-sage);
+        color: var(--color-graphite);
+      }
+
+      /* ───────────────────────── HEADER ────────────────────────────── */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(250, 247, 241, 0.85);
+        backdrop-filter: saturate(140%) blur(10px);
+        -webkit-backdrop-filter: saturate(140%) blur(10px);
+        border-bottom: 1px solid var(--color-line);
+      }
+      .header-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        padding-block: 0.85rem;
+      }
+      @media (min-width: 880px) {
+        .header-inner {
+          flex-direction: row;
+          justify-content: space-between;
+          padding-block: 1.05rem;
+        }
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 0.6rem;
+        text-decoration: none;
+        color: var(--color-graphite);
+      }
+      .brand-name {
+        font-family: var(--font-serif);
+        font-size: 1.2rem;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+      }
+      .brand-role {
+        font-size: 0.78rem;
+        color: var(--color-muted);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .primary-nav .nav-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem 1.4rem;
+        justify-content: center;
+      }
+      .primary-nav a {
+        text-decoration: none;
+        color: var(--color-graphite);
+        font-size: 0.97rem;
+        padding: 0.35rem 0.1rem;
+        border-bottom: 1px solid transparent;
+        transition: color 0.2s ease, border-color 0.2s ease;
+      }
+      .primary-nav a:hover {
+        color: var(--color-sage-dark);
+        border-bottom-color: var(--color-sage);
+      }
+
+      .nav-cta { display: none; }
+      @media (min-width: 1024px) {
+        .nav-cta { display: inline-flex; padding: 0.65rem 1.1rem; font-size: 0.92rem; }
+      }
+
+      /* ───────────────────────── HERO ──────────────────────────────── */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding-block: clamp(4rem, 9vw, 7.5rem);
+        background:
+          radial-gradient(60% 60% at 85% 0%, rgba(232, 221, 205, 0.55) 0%, transparent 60%),
+          radial-gradient(45% 50% at 0% 90%, rgba(169, 184, 163, 0.20) 0%, transparent 65%),
+          var(--color-bg);
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      .hero-bg::before,
+      .hero-bg::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(40px);
+        opacity: 0.55;
+      }
+      .hero-bg::before {
+        width: 480px; height: 480px;
+        right: -140px; top: -160px;
+        background: radial-gradient(circle, rgba(184, 168, 154, 0.35), transparent 70%);
+      }
+      .hero-bg::after {
+        width: 360px; height: 360px;
+        left: -120px; bottom: -100px;
+        background: radial-gradient(circle, rgba(169, 184, 163, 0.30), transparent 70%);
+      }
+
+      .hero-inner {
+        position: relative;
+        max-width: 44rem;
+        text-align: left;
+      }
+
+      .hero-title {
+        font-family: var(--font-serif);
+        font-weight: 500;
+        font-size: clamp(2rem, 5.4vw, 3.6rem);
+        line-height: 1.12;
+        letter-spacing: -0.015em;
+        color: var(--color-graphite);
+        margin: 0 0 1.25rem;
+      }
+
+      .hero-lead {
+        font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+        color: var(--color-muted);
+        max-width: 36rem;
+        margin: 0 0 2rem;
+        line-height: 1.6;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-bottom: 2.25rem;
+      }
+
+      .hero-trust {
+        font-size: 0.92rem;
+        color: var(--color-muted);
+        margin: 0;
+        letter-spacing: 0.01em;
+      }
+      .hero-trust .dot {
+        margin-inline: 0.4rem;
+        color: var(--color-sage);
+      }
+
+      /* ───────────────────────── CARDS ─────────────────────────────── */
+      .cards {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      @media (min-width: 640px) {
+        .cards-3 { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (min-width: 960px) {
+        .cards-3 { grid-template-columns: repeat(3, 1fr); }
+      }
+
+      .card {
+        background: var(--color-surface);
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius-lg);
+        padding: 1.6rem 1.6rem 1.7rem;
+        box-shadow: var(--shadow-soft);
+        transition: transform 0.25s ease, box-shadow 0.25s ease,
+                    border-color 0.25s ease;
+      }
+      .card:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-card);
+        border-color: rgba(169, 184, 163, 0.5);
+      }
+      .card-title {
+        font-family: var(--font-serif);
+        font-size: 1.18rem;
+        font-weight: 500;
+        margin: 0 0 0.5rem;
+        color: var(--color-graphite);
+        letter-spacing: -0.005em;
+      }
+      .card-body {
+        margin: 0;
+        color: var(--color-muted);
+        font-size: 0.97rem;
+        line-height: 1.6;
+      }
+
+      .card-soft {
+        background: var(--color-surface);
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius-lg);
+        padding: 1.4rem 1.5rem;
+        box-shadow: var(--shadow-soft);
+        display: flex;
+        gap: 0.85rem;
+        align-items: flex-start;
+      }
+      .card-soft p { margin: 0; color: var(--color-text); font-size: 0.99rem; }
+      .card-mark {
+        flex-shrink: 0;
+        width: 10px;
+        height: 10px;
+        margin-top: 0.55rem;
+        border-radius: 50%;
+        background: var(--color-sage);
+      }
+
+      /* ───────────────────────── O MNIE ───────────────────────────── */
+      .col-aside { position: relative; }
+      .callout {
+        background: var(--color-surface);
+        border: 1px solid var(--color-line);
+        border-left: 3px solid var(--color-sage);
+        border-radius: var(--radius-md);
+        padding: 1.75rem 1.75rem 1.5rem;
+        margin: 0;
+        box-shadow: var(--shadow-soft);
+        position: relative;
+      }
+      .callout blockquote {
+        margin: 0 0 0.85rem;
+      }
+      .callout blockquote p {
+        font-family: var(--font-serif);
+        font-size: 1.18rem;
+        line-height: 1.5;
+        color: var(--color-graphite);
+        margin: 0;
+        font-style: italic;
+      }
+      .callout figcaption {
+        font-size: 0.85rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-sage-dark);
+      }
+
+      /* ───────────────────────── ZAKRES ────────────────────────────── */
+      .scope-grid {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.9rem 2rem;
+      }
+      @media (min-width: 720px) { .scope-grid { grid-template-columns: repeat(2, 1fr); } }
+
+      .scope-item {
+        display: flex;
+        gap: 0.85rem;
+        padding: 0.85rem 0;
+        border-bottom: 1px solid var(--color-line);
+        line-height: 1.5;
+        color: var(--color-text);
+      }
+      .scope-item .bullet {
+        color: var(--color-sage-dark);
+        font-weight: 500;
+        flex-shrink: 0;
+      }
+
+      /* ───────────────────────── CENNIK ────────────────────────────── */
+      .pricing-list {
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+        max-width: 44rem;
+        background: var(--color-surface);
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-soft);
+        overflow: hidden;
+      }
+      .price-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.25rem;
+        padding: 1.15rem 1.5rem;
+        border-bottom: 1px solid var(--color-line);
+      }
+      .price-row:last-child { border-bottom: 0; }
+      .price-info { min-width: 0; }
+      .price-title {
+        font-family: var(--font-serif);
+        font-size: 1.05rem;
+        font-weight: 500;
+        margin: 0 0 0.15rem;
+        color: var(--color-graphite);
+        letter-spacing: -0.005em;
+      }
+      .price-meta {
+        margin: 0;
+        font-size: 0.88rem;
+        color: var(--color-muted);
+        letter-spacing: 0.04em;
+      }
+      .price-amount {
+        font-family: var(--font-serif);
+        font-size: 1.15rem;
+        font-weight: 500;
+        color: var(--color-graphite);
+        white-space: nowrap;
+      }
+      @media (max-width: 520px) {
+        .price-row { flex-direction: column; align-items: flex-start; gap: 0.35rem; }
+        .price-amount { font-size: 1.05rem; }
+      }
+
+      /* ───────────────────────── KONTAKT ───────────────────────────── */
+      .two-col-contact { gap: 3rem; align-items: start; }
+      @media (min-width: 880px) {
+        .two-col-contact { grid-template-columns: 1fr 1fr; }
+      }
+
+      .contact-card {
+        background: var(--color-surface);
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius-lg);
+        padding: 1.9rem 1.9rem;
+        box-shadow: var(--shadow-soft);
+      }
+      .contact-list { margin: 0; }
+      .contact-item {
+        display: grid;
+        grid-template-columns: 7.5rem 1fr;
+        gap: 1rem;
+        padding: 0.8rem 0;
+        border-bottom: 1px solid var(--color-line);
+      }
+      .contact-item:last-child { border-bottom: 0; padding-bottom: 0; }
+      .contact-item:first-child { padding-top: 0; }
+      .contact-item dt {
+        font-size: 0.78rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--color-sage-dark);
+        font-weight: 500;
+        align-self: center;
+      }
+      .contact-item dd {
+        margin: 0;
+        font-size: 1rem;
+        color: var(--color-graphite);
+      }
+      .contact-item a { color: var(--color-graphite); }
+
+      /* ───────────────────────── FOOTER ────────────────────────────── */
+      .site-footer {
+        background: var(--color-graphite);
+        color: rgba(255, 255, 255, 0.78);
+        padding-block: clamp(2.25rem, 4vw, 3rem);
+        margin-top: 0;
+      }
+      .footer-inner {
+        display: grid;
+        gap: 1.75rem;
+      }
+      @media (min-width: 800px) {
+        .footer-inner {
+          grid-template-columns: 1fr 1.4fr;
+          align-items: start;
+          gap: 2.5rem 3rem;
+        }
+        .footer-disclaimer { grid-column: 1 / -1; order: 3; }
+        .footer-links { justify-self: end; }
+        .footer-copy { grid-column: 1 / -1; order: 4; }
+      }
+
+      .footer-name {
+        font-family: var(--font-serif);
+        font-size: 1.2rem;
+        margin: 0 0 0.35rem;
+        color: #fff;
+        font-weight: 500;
+      }
+      .footer-role {
+        margin: 0;
+        font-size: 0.88rem;
+        letter-spacing: 0.04em;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .footer-disclaimer {
+        margin: 0;
+        font-size: 0.88rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 60ch;
+      }
+      .footer-disclaimer strong { color: #fff; }
+
+      .footer-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.5rem;
+      }
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.78);
+        text-decoration: none;
+        font-size: 0.92rem;
+        border-bottom: 1px solid transparent;
+      }
+      .footer-links a:hover {
+        color: #fff;
+        border-bottom-color: var(--color-sage);
+      }
+
+      .footer-copy {
+        margin: 0;
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.5);
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      /* ───────────────────── REDUCED MOTION ────────────────────────── */
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </body>
+</html>

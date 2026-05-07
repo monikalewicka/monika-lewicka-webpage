@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Monika Lewicka">
+  <circle cx="32" cy="32" r="30" fill="#FAF7F1"/>
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#A9B8A3" stroke-width="2"/>
+  <text x="50%" y="56%" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#2F3A46" font-style="italic">M</text>
+</svg>
