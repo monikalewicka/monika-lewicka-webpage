@@ -11,7 +11,7 @@ import { defineConfig } from 'astro/config';
 
 // TODO: Gdy URL będzie znany, dodaj do defineConfig:
 //   site: 'https://<login>.github.io',
-const BASE_PATH = '/';
+const BASE_PATH = '/monika-lewicka-webpage';
 
 export default defineConfig({
   base: BASE_PATH,
