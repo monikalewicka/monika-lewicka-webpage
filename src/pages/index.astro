@@ -34,8 +34,7 @@ const NAV = [
 ];
 
 const FOR_WHOM = [
-  'Dla osób, które czują przeciążenie i napięcie.',
-  'Dla osób doświadczających stresu zawodowego.',
+  'Dla osób, które doświadczają kryzysu, przewlekłego stresu, napięcia czy przeciążenia.',
   'Dla osób w zmianie życiowej lub zawodowej.',
   'Dla osób, które chcą lepiej rozumieć swoje emocje i potrzeby.',
   'Dla osób szukających większej równowagi między pracą a życiem prywatnym.',
@@ -84,11 +83,9 @@ const HOW_I_WORK = [
 // TODO: Adjust pricing here. Copy in the section description is intentionally
 // soft so prices can be edited without rewriting the surrounding text.
 const PRICING = [
-  { title: 'Konsultacja psychologiczna', duration: '50 min', price: '250 zł' },
-  { title: 'Konsultacja psychologiczna online', duration: '50 min', price: '230 zł' },
+  { title: 'Konsultacja psychologiczna', duration: '50 min', price: '230 zł' },
+  { title: 'Konsultacja psychologiczna online', duration: '50 min', price: '210 zł' },
   { title: 'Pierwsza konsultacja / rozmowa wstępna', duration: '50 min', price: '250 zł' },
-  { title: 'Konsultacja wsparciowa w sytuacji przeciążenia lub kryzysu', duration: '50 min', price: '250 zł' },
-  { title: 'Psychoedukacja / rozwój kompetencji emocjonalnych', duration: '50 min', price: '250 zł' },
 ];
 
 const jsonLd = {
@@ -182,7 +179,7 @@ const jsonLd = {
         <div class="container hero-inner">
           <p class="eyebrow">Konsultacje psychologiczne · {CONTACT.location}</p>
           <h1 id="hero-heading" class="hero-title">
-            Wsparcie psychologiczne w&nbsp;stresie, przeciążeniu i&nbsp;zmianie.
+            Pomoc psychologiczna w sytuacji doświadczania kryzysu, traumy lub stresu.
           </h1>
           <p class="hero-lead">
             Konsultacje psychologiczne dla osób dorosłych, które potrzebują
@@ -237,11 +234,11 @@ const jsonLd = {
             <figure class="callout">
               <blockquote>
                 <p>
-                  „Czasem największą zmianę przynosi nie pośpiech, ale
-                  zatrzymanie się i&nbsp;lepsze zrozumienie własnych potrzeb.”
+                  „Jest ciekawym paradoksem to, że dopiero kiedy akceptuję
+                  siebie takim, jakim jestem, mogę się zmienić.”
                 </p>
               </blockquote>
-              <figcaption>Monika Lewicka</figcaption>
+              <figcaption>Carl Rogers</figcaption>
             </figure>
           </aside>
         </div>
@@ -252,7 +249,7 @@ const jsonLd = {
         <div class="container">
           <header class="section-header">
             <p class="section-eyebrow">Dla kogo</p>
-            <h2 id="forwhom-heading" class="section-title">Komu może pomóc rozmowa</h2>
+            <h2 id="forwhom-heading" class="section-title">Konsultacje skierowane do osób dorosłych</h2>
             <p class="section-lead">
               Konsultacje są skierowane do osób dorosłych, które chcą zatrzymać
               się przy tym, co dzieje się w&nbsp;ich życiu, i&nbsp;w&nbsp;spokojnej
@@ -278,9 +275,7 @@ const jsonLd = {
             <p class="section-eyebrow">Zakres wsparcia</p>
             <h2 id="scope-heading" class="section-title">W czym pomagam</h2>
             <p class="section-lead">
-              Pracuję z&nbsp;osobami dorosłymi w&nbsp;obszarach, które wymagają
-              spokojnej rozmowy i&nbsp;lepszego rozumienia siebie. Poniżej
-              najczęstsze tematy konsultacji.
+              Pracuję z osobami dorosłymi. Poniżej najczęstsze tematy konsultacji.
             </p>
           </header>
 
@@ -329,7 +324,7 @@ const jsonLd = {
         <div class="container">
           <header class="section-header">
             <p class="section-eyebrow">Cennik</p>
-            <h2 id="pricing-heading" class="section-title">Proponowany cennik konsultacji</h2>
+            <h2 id="pricing-heading" class="section-title">Udzielanie świadczeń psychologicznych</h2>
             <p class="section-lead">
               Każde spotkanie trwa 50&nbsp;minut. Forma i&nbsp;zakres wsparcia
               są ustalane indywidualnie podczas rozmowy.
@@ -349,8 +344,9 @@ const jsonLd = {
           </ul>
 
           <p class="note">
-            Cennik ma charakter informacyjny. Ostateczny zakres i&nbsp;forma
-            wsparcia ustalane są indywidualnie.
+            Cennik ma charakter informacyjny i nie stanowi oferty handlowej 
+            w rozumieniu art. 66 § 1 Kodeksu cywilnego. Ostateczny zakres 
+            i forma wsparcia ustalane są indywidualnie.
           </p>
         </div>
       </section>
@@ -413,10 +409,12 @@ const jsonLd = {
         </div>
 
         <p class="footer-disclaimer">
-          Strona nie służy do udzielania pomocy w&nbsp;stanach bezpośredniego
-          zagrożenia życia lub zdrowia. W&nbsp;sytuacji nagłej skontaktuj się
-          z&nbsp;numerem alarmowym <strong>112</strong> lub najbliższym
-          ośrodkiem pomocy kryzysowej.
+          Strona internetowa oraz formularz kontaktowy nie służą do udzielania
+          pomocy w sytuacjach nagłego zagrożenia zdrowia lub życia.
+          W przypadku kryzysu psychicznego, zagrożenia życia lub nagłego
+          pogorszenia stanu psychicznego należy skontaktować się z numerem
+          alarmowym <strong>112</strong>, zgłosić się do najbliższego szpitalnego oddziału
+          ratunkowego lub centrum interwencji kryzysowej.
         </p>
 
         <ul class="footer-links" role="list">
