@@ -247,7 +247,7 @@ const jsonLd = {
       {/* ─── DLA KOGO ────────────────────────────────────────────────── */}
       <section id="dla-kogo" class="section" aria-labelledby="forwhom-heading">
         <div class="container">
-          <header class="section-header">
+          <header class="section-header section-header--wide">
             <p class="section-eyebrow">Dla kogo</p>
             <h2 id="forwhom-heading" class="section-title">Konsultacje skierowane do osób dorosłych</h2>
             <p class="section-lead">
@@ -257,7 +257,7 @@ const jsonLd = {
             </p>
           </header>
 
-          <ul class="cards cards-3" role="list">
+          <ul class="cards cards-2" role="list">
             {FOR_WHOM.map((line) => (
               <li class="card card-soft">
                 <span class="card-mark" aria-hidden="true"></span>
@@ -299,7 +299,7 @@ const jsonLd = {
       {/* ─── JAK PRACUJĘ ─────────────────────────────────────────────── */}
       <section id="jak-pracuje" class="section" aria-labelledby="how-heading">
         <div class="container">
-          <header class="section-header">
+          <header class="section-header section-header--wide">
             <p class="section-eyebrow">Jak pracuję</p>
             <h2 id="how-heading" class="section-title">Spokojnie, z uważnością, w Twoim tempie</h2>
             <p class="section-lead">
@@ -322,7 +322,7 @@ const jsonLd = {
       {/* ─── CENNIK ──────────────────────────────────────────────────── */}
       <section id="cennik" class="section section-light" aria-labelledby="pricing-heading">
         <div class="container">
-          <header class="section-header">
+          <header class="section-header section-header--wide">
             <p class="section-eyebrow">Cennik</p>
             <h2 id="pricing-heading" class="section-title">Udzielanie świadczeń psychologicznych</h2>
             <p class="section-lead">
@@ -417,15 +417,16 @@ const jsonLd = {
           ratunkowego lub centrum interwencji kryzysowej.
         </p>
 
-        <ul class="footer-links" role="list">
-          {/* TODO: Replace # with the real URL of the privacy policy when available. */}
-          <li><a href="#">Polityka prywatności</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
-
-        <p class="footer-copy">
-          © {new Date().getFullYear()} Monika Lewicka. Wszelkie prawa zastrzeżone.
-        </p>
+        <div class="footer-bottom">
+          <p class="footer-copy">
+            © {new Date().getFullYear()} Monika Lewicka. Wszelkie prawa zastrzeżone.
+          </p>
+          <ul class="footer-links" role="list">
+            {/* TODO: Replace # with the real URL of the privacy policy when available. */}
+            <li><a href="#">Polityka prywatności</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
       </div>
     </footer>
 
@@ -438,6 +439,7 @@ const jsonLd = {
         --color-sand-soft: #F1E9DC;
         --color-sage: #A9B8A3;
         --color-sage-dark: #6F7F68;
+        --color-sage-light: #C3D9C7;
         --color-graphite: #263238;
         --color-navy-muted: #2F3A46;
         --color-taupe: #B8A89A;
@@ -541,6 +543,11 @@ const jsonLd = {
         margin: 0 auto 3rem;
         text-align: center;
       }
+      .section-header--wide {
+        max-width: none;
+        margin-inline: 0;
+        text-align: center;
+      }
 
       .section-eyebrow,
       .eyebrow {
@@ -611,7 +618,7 @@ const jsonLd = {
       .btn:active { transform: translateY(1px); }
 
       .btn-primary {
-        background: var(--color-sage-dark);
+        background: var(--color-sage-light);
         color: #fff;
       }
       .btn-primary:hover {
@@ -738,7 +745,6 @@ const jsonLd = {
 
       .hero-inner {
         position: relative;
-        max-width: 44rem;
         text-align: left;
       }
 
@@ -781,13 +787,14 @@ const jsonLd = {
       /* ───────────────────────── CARDS ─────────────────────────────── */
       .cards {
         list-style: none;
-        margin: 0;
+        margin: 72px;
         padding: 0;
         display: grid;
         grid-template-columns: 1fr;
         gap: 1.25rem;
       }
       @media (min-width: 640px) {
+        .cards-2 { grid-template-columns: repeat(2, 1fr); }
         .cards-3 { grid-template-columns: repeat(2, 1fr); }
       }
       @media (min-width: 960px) {
@@ -992,18 +999,9 @@ const jsonLd = {
         margin-top: 0;
       }
       .footer-inner {
-        display: grid;
-        gap: 1.75rem;
-      }
-      @media (min-width: 800px) {
-        .footer-inner {
-          grid-template-columns: 1fr 1.4fr;
-          align-items: start;
-          gap: 2.5rem 3rem;
-        }
-        .footer-disclaimer { grid-column: 1 / -1; order: 3; }
-        .footer-links { justify-self: end; }
-        .footer-copy { grid-column: 1 / -1; order: 4; }
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
       }
 
       .footer-name {
@@ -1048,12 +1046,19 @@ const jsonLd = {
         border-bottom-color: var(--color-sage);
       }
 
+      .footer-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
       .footer-copy {
         margin: 0;
         font-size: 0.82rem;
         color: rgba(255, 255, 255, 0.5);
-        padding-top: 1rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
       }
 
       /* ───────────────────── REDUCED MOTION ────────────────────────── */
