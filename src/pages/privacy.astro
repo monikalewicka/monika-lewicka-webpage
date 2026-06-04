@@ -1,0 +1,380 @@
+---
+// Privacy Policy page — same layout as main page
+const SITE_URL = 'https://monikalewicka.pl';
+const PAGE_TITLE = 'Polityka Prywatności — Monika Lewicka · Psycholog';
+const PAGE_DESC = 'Polityka prywatności i przetwarzania danych osobowych Moniki Lewicka Centrum Wsparcia.';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${SITE_URL}/privacy`,
+  name: PAGE_TITLE,
+  url: `${SITE_URL}/privacy`,
+  isPartOf: { '@id': `${SITE_URL}/#service` },
+};
+---
+
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#FAF7F1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{PAGE_TITLE}</title>
+    <meta name="description" content={PAGE_DESC} />
+
+    <link rel="canonical" href={`${SITE_URL}/privacy`} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="Monika Lewicka — psycholog, strona główna">
+          <span class="brand-name">Monika Lewicka</span>
+          <span class="brand-role">psycholog</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="privacy-section" aria-labelledby="privacy-title">
+        <div class="container">
+          <h1 id="privacy-title" class="privacy-title">Polityka Prywatności</h1>
+
+          <div class="privacy-content">
+            <section>
+              <h2>Klauzula przy formularzu kontaktowym</h2>
+              <p>
+                Administratorem Twoich danych osobowych jest Monika Lewicka
+                Centrum Wsparcia z&nbsp;siedzibą w&nbsp;Warszawie, Pl.&nbsp;Hallera
+                7a/14, 03-464&nbsp;Warszawa, e-mail:
+                <a href="mailto:centrumwsparciaml@gmail.com"
+                  >centrumwsparciaml@gmail.com</a
+                >. Dane podane w&nbsp;formularzu będą przetwarzane w&nbsp;celu
+                udzielenia odpowiedzi na&nbsp;Twoje zgłoszenie oraz kontaktu
+                w&nbsp;sprawie usług psychologicznych, na&nbsp;podstawie art.&nbsp;6
+                ust.&nbsp;1&nbsp;lit&nbsp;a&nbsp;RODO. Podanie danych jest
+                dobrowolne, ale niezbędne do&nbsp;kontaktu. Masz prawo dostępu
+                do&nbsp;swoich danych, ich sprostowania, ograniczenia
+                przetwarzania, usunięcia oraz wnienia skargi do&nbsp;Prezesa
+                UODO. Szczegółowe informacje o&nbsp;przetwarzaniu danych
+                znajdziesz w&nbsp;naszej minimalnej Polityce prywatności.
+              </p>
+            </section>
+
+            <section>
+              <h2>1. Postanowienia ogólne</h2>
+              <p>
+                Niniejsza Polityka prywatności określa zasady przetwarzania
+                danych osobowych osób korzystających z&nbsp;usług
+                psychologicznych świadczonych przez Monika Lewicka Centrum
+                Wsparcia oraz odwiedzających stronę internetową gabinetu,
+                w&nbsp;tym korzystających z&nbsp;formularza kontaktowego.
+              </p>
+              <p>
+                Polityka została przygotowana zgodnie z&nbsp;przepisami
+                Rozporzadzenia Parlamentu Europejskiego i&nbsp;Rady (UE)
+                2016/679 z&nbsp;dnia 27&nbsp;kwietnia 2016&nbsp;r. (RODO) oraz
+                innymi obowiązującymi przepisami z&nbsp;zakresu ochrony danych
+                osobowych.
+              </p>
+              <p>
+                W&nbsp;zakresie nieregulowanym w&nbsp;niniejszej polityce
+                zastosowanie mają przepisy RODO oraz przepisy krajowe,
+                w&nbsp;szczególności ustawy z&nbsp;dnia 29&nbsp;stycznia
+                2026&nbsp;r. o&nbsp;zawodzie psychologa oraz samorządzie
+                zawodowym psychologów.
+              </p>
+            </section>
+
+            <section>
+              <h2>2. Administrator danych</h2>
+              <p>Administratorem danych osobowych jest:</p>
+              <address class="contact-block">
+                Monika Lewicka Centrum Wsparcia<br />
+                Pl.&nbsp;Hallera 7a/14<br />
+                03-464&nbsp;Warszawa<br />
+                <a href="mailto:centrumwsparciaml@gmail.com"
+                  >centrumwsparciaml@gmail.com</a
+                >
+              </address>
+              <p>
+                W&nbsp;sprawach związanych z&nbsp;przetwarzaniem danych
+                osobowych można skontaktować się z&nbsp;Administratorem droga
+                mailową lub listownie na&nbsp;powyższy adres.
+              </p>
+            </section>
+
+            <p class="updated-note">
+              <em>Ostatnia aktualizacja: {new Date().toLocaleDateString('pl-PL')}</em>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <p class="footer-name">Monika Lewicka</p>
+          <p class="footer-role">Psycholog · konsultacje psychologiczne</p>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copy">© {new Date().getFullYear()} Monika Lewicka. Wszelkie prawa zastrzeżone.</p>
+          <ul class="footer-links" role="list">
+            <li><a href="/">Strona główna</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <style is:global>
+      :root {
+        --color-bg: #FAF7F1;
+        --color-surface: #FFFFFF;
+        --color-graphite: #263238;
+        --color-navy-muted: #2F3A46;
+        --color-sage: #A9B8A3;
+        --color-sage-dark: #6F7F68;
+        --color-muted: #6D6A66;
+        --color-line: rgba(38, 50, 56, 0.08);
+
+        --radius-sm: 6px;
+        --radius-md: 12px;
+        --radius-lg: 20px;
+
+        --shadow-soft: 0 1px 2px rgba(38, 50, 56, 0.04),
+                       0 8px 24px rgba(38, 50, 56, 0.05);
+
+        --container: 1120px;
+        --gutter: clamp(1.25rem, 4vw, 2rem);
+
+        --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+        --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                     "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+                     "Apple Color Emoji", "Segoe UI Emoji";
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+
+      html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        background: var(--color-bg);
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        html { scroll-behavior: smooth; }
+      }
+
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        font-size: 17px;
+        line-height: 1.65;
+        color: var(--color-text, #2A2A2A);
+        background: var(--color-bg);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      a { color: var(--color-navy-muted); text-decoration-color: var(--color-sage); text-underline-offset: 3px; }
+      a:hover { color: var(--color-sage-dark); }
+      a:focus-visible { outline: 2px solid var(--color-sage-dark); outline-offset: 3px; }
+
+      [id] { scroll-margin-top: 96px; }
+
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 1rem;
+        background: var(--color-graphite);
+        color: #fff;
+        padding: 0.5rem 0.875rem;
+        border-radius: var(--radius-sm);
+        z-index: 100;
+        text-decoration: none;
+      }
+      .skip-link:focus { top: 0.75rem; }
+
+      .container {
+        width: 100%;
+        max-width: var(--container);
+        margin-inline: auto;
+        padding-inline: var(--gutter);
+      }
+
+      /* Header */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(250, 247, 241, 0.85);
+        backdrop-filter: saturate(140%) blur(10px);
+        -webkit-backdrop-filter: saturate(140%) blur(10px);
+        border-bottom: 1px solid var(--color-line);
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-block: 0.85rem;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 0.6rem;
+        text-decoration: none;
+        color: var(--color-graphite);
+      }
+      .brand-name {
+        font-family: var(--font-serif);
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+      .brand-role {
+        font-size: 0.78rem;
+        color: var(--color-muted);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      /* Main content */
+      .privacy-section {
+        padding-block: clamp(3.5rem, 7vw, 6rem);
+      }
+      .privacy-title {
+        font-family: var(--font-serif);
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 500;
+        line-height: 1.2;
+        color: var(--color-graphite);
+        margin: 0 0 2.5rem;
+      }
+      .privacy-content {
+        max-width: 48rem;
+        margin-inline: auto;
+      }
+      .privacy-content section {
+        margin-bottom: 2rem;
+      }
+      .privacy-content h2 {
+        font-family: var(--font-serif);
+        font-size: 1.35rem;
+        font-weight: 500;
+        color: var(--color-graphite);
+        margin: 0 0 1rem;
+        line-height: 1.3;
+      }
+      .privacy-content p {
+        margin: 0 0 1rem;
+        line-height: 1.7;
+        color: var(--color-text, #2A2A2A);
+      }
+      .privacy-content p:last-of-type {
+        margin-bottom: 0;
+      }
+      .privacy-content a {
+        word-break: break-word;
+      }
+
+      .contact-block {
+        font-style: normal;
+        background: var(--color-bg);
+        border-left: 3px solid var(--color-sage);
+        padding: 1rem 1rem 1rem 1.25rem;
+        border-radius: var(--radius-md);
+        margin: 1.5rem 0;
+        line-height: 1.8;
+      }
+
+      .updated-note {
+        margin-top: 2.5rem !important;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--color-line);
+        font-size: 0.92rem;
+        color: var(--color-muted);
+      }
+
+      /* Footer */
+      .site-footer {
+        background: var(--color-graphite);
+        color: rgba(255, 255, 255, 0.78);
+        padding-block: clamp(2.25rem, 4vw, 3rem);
+        margin-top: 2rem;
+      }
+      .footer-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .footer-brand {
+        text-align: center;
+      }
+      .footer-name {
+        font-family: var(--font-serif);
+        font-size: 1.2rem;
+        margin: 0 0 0.35rem;
+        color: #fff;
+        font-weight: 500;
+      }
+      .footer-role {
+        margin: 0;
+        font-size: 0.88rem;
+        letter-spacing: 0.04em;
+        color: rgba(255, 255, 255, 0.6);
+      }
+      .footer-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .footer-copy {
+        margin: 0;
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .footer-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 1.5rem;
+      }
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.78);
+        text-decoration: none;
+        font-size: 0.92rem;
+        border-bottom: 1px solid transparent;
+      }
+      .footer-links a:hover {
+        color: #fff;
+        border-bottom-color: var(--color-sage);
+      }
+
+      /* Responsive */
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </body>
+</html>
